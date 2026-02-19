@@ -1,0 +1,25 @@
+docker -v //ใช้เช็คversion
+docker run //ตรวจสอบว่าทำงานอยู่มั้ย
+docker ps --all //แสดงสถานะcontainer
+docker images //ตรวจสอบรายชื่อimages
+docker run busybox ping google.com //ทดสอบการเชื่อมต่ออินเตอร์เน็ตในcontainer
+docker stop suspicious_goldwasser //หยุดcontainerที่ชื่อว่า suspicious_goldwasser
+docker pull busybox //ดึงimageที่ชื่อว่า busyboxจากdockerhub
+docker create --name mybusybox busybox //สร้างcontainerที่ชื่อว่า mybusyboxจากimageที่ชื่อว่า busybox
+docker start mybusybox //เริ่มcontainerที่ชื่อว่า mybusybox
+docker rm 49639e631a20 //ลบcontainerที่ชื่อว่า 49639e631a20
+docker system prune //ลบcontainerที่หยุดทำงานแล้วและลบimageที่ไม่ได้ใช้งานแล้ว
+docker run nginx //สร้างและเริ่มcontainerที่ชื่อว่า nginxจากimageที่ชื่อว่า nginx (server web)
+docker exec -it 3fec05afbc08 sh //เข้าไปในcontainerที่ชื่อว่า 3fec05afbc08และเปิดshell
+docker exec -it 3fec05afbc08 bash //ออกจากcontainerที่ชื่อว่า 3fec05afbc08
+cd /usr/share/nginx/html //เข้าไปในโฟลเดอร์ที่เก็บไฟล์ของเว็บเซิร์ฟเวอร์ nginx
+docker run -p 9000:80 nginx //สร้างและเริ่มcontainerที่ชื่อว่า nginxจากimageที่ชื่อว่า nginxและเชื่อมต่อพอร์ต9000ของเครื่องhostกับพอร์ต80ของcontainer พิมพ์ต่อไม่ได้
+docker run -d -p 9000:80 nginx //สร้างและเริ่มcontainerที่ชื่อว่า nginxจากimage พิมพ์ต่อได้
+docker image ls //ตรวจสอบรายชื่อimages
+docker image inspect nginx //ตรวจสอบรายละเอียดของimageที่ชื่อว่า nginx
+docker image rm <name> //ลบimageที่ชื่อว่า <name>
+docker pull mysql:5.7 //ดึงimageที่ชื่อว่า masql:5.7จากdockerhub (ฐานข้อมูล)
+docker pull phpmyadmin/phpmyadmin //ดึงimageที่ชื่อว่า phpmyadmin/phpmyadminจากdockerhub (เครื่องมือจัดการฐานข้อมูล)
+docker pull wordpress //ดึงimageที่ชื่อว่า wordpressจากdockerhub (CMS)
+docker network create wordpress //สร้างเครือข่ายที่ชื่อว่า wordpress
+docker network ls //ตรวจสอบรายชื่อเครือข่าย
